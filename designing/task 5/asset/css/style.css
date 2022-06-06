@@ -1,0 +1,208 @@
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0px;
+        }
+        
+        .esty h2 {
+            font-size: 30px;
+            color: #ED631F;
+            font-weight: 500;
+            padding-left: 9px;
+        }
+        
+        .topmenu {
+            background-color: #1C2260;
+            height: 64px;
+        }
+        
+        .top-heading p {
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+        }
+        
+        .welcome {
+            font-weight: 600;
+        }
+        
+        .nav-icon {
+            min-height: 53px;
+        }
+        
+        .discuss {
+            color: white;
+            margin-top: 19px;
+        }
+        
+        .bars-icon {
+            font-size: 34px;
+            color: rgb(255, 255, 255);
+            margin: 12px 43px 17px 29px;
+        }
+        
+        .note {
+            font-weight: 900;
+        }
+        
+        .top-heading-1 {
+            min-height: 0px;
+        }
+        
+        .service {
+            padding-left: 14px;
+        }
+        
+        .welcome-subheading h2 {
+            margin: 50px 0px 21px 0px;
+            font-size: 38px;
+            font-weight: 550;
+        }
+        
+        .welcome-subheading-part-2 h3 {
+            font-size: 17px;
+        }
+        
+        .welcome-here {
+            color: #006FBB;
+            font-weight: 700;
+        }
+        
+        .last-refresh {
+            color: #637381;
+        }
+        
+        .rate-heading {
+            letter-spacing: 1;
+            margin: 0px 63px 0px 0px;
+        }
+        
+        .rate-banner {
+            margin: 19px 0px 0px 0px;
+        }
+        
+        .rate-star {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .complete-card {
+            margin: 20px 0px 0px 0px;
+        }
+        
+        .link-card {
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-question {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .facebook {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .facebook-para {
+            margin-left: 12px
+        }
+        
+        .product-71 h2 {
+            font-size: 15px;
+        }
+        
+        .peace {
+            color: #0F85D6;
+        }
+        
+        .peace-heading {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+        }
+        
+        .peace-heading-1 {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            padding-bottom: 12px;
+        }
+        
+        .hr-line {
+            opacity: 0.3;
+        }
+        
+        .eyes {
+            display: flex;
+            color: #2D9CDB
+        }
+        
+        .announce {
+            padding-bottom: 17px;
+        }
+        
+        .footer-section {
+            background-color: #DFE3E8;
+            padding: 16px 0px 0px 0px;
+            height: 76px;
+        }
+        
+        .main-heading {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .welcome-section {
+            width: 50%;
+            padding: 0px 15px;
+        }
+        
+        .product-pie {
+            width: 30%;
+            padding: 0px 15px;
+        }
+        
+        .navbar-heading {
+            width: 20%;
+        }
+        
+        .Polaris-complete {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .polaris-complete-1 {
+            width: 10%;
+        }
+        
+        .polaris-complete-2 {
+            width: 55%;
+        }
+        
+        .product-card {
+            margin-top: 125px;
+        }
+        
+        .add-product {
+            border: 1px solid rgb(192, 186, 186);
+            border-radius: 23px;
+            padding: 12px;
+        }

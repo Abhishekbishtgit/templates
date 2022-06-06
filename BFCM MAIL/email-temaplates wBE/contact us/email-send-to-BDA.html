@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        /* RESET STYLES */
+        
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse !important;
+        }
+        
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        /* iOS BLUE LINKS */
+        
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+    </style>
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important; background-color: #f1f3f3;" bgcolor="#f1f3f3">
+
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+        <tbody>
+            <tr>
+                <td align="center" width="100%" valign="top" height="100%">
+                    <table style="max-width: 650px; width: 100%; background-color: #f1f3f3;" bgcolor="#f1f3f3" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 10px; padding-left: 10px; padding-top: 25px; padding-bottom: 25px;" width="100%" valign="top" height="100%"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="max-width: 650px;width:100%; background-color: #fff;" bgcolor="#fff" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 50px; padding-left: 50px; padding-right: 50px; padding-bottom: 5px;" width="100%" valign="top" height="100%">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td style="color: #ff9c39; font-weight:bold; font-family: Open Sans,Helvetica,Arial,sans-serif; padding: 10px; font-size: 14px;" width="100%" valign="top" height="100%">
+                                                    <?=$query_data['shop']?>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="color: #66BECD; font-family: Open Sans,Helvetica,Arial,sans-serif; font-size: 35px; padding: 10px;" width="100%" valign="top" height="100%">
+                                                    Request from <strong>contact us</strong> Page
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" valign="top" height="100%" align="center">
+                    <table style="max-width: 650px; width: 100%; background-color: #fff;" bgcolor="#fff" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 25px;" width="100%" valign="top" height="100%">
+                                    <img src="https://i.imgur.com/u0Sl2Dz.png" alt="" style="width: 100%;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" valign="top" height="100%" align="center">
+                    <table style="max-width: 650px; width: 100%; background-color: #fff;" bgcolor="#fff" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 20px; padding-bottom: 5px; padding-right: 50px; padding-left: 50px;" width="100%" valign="top" height="100%">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 15px; color: #555555; line-height: 1.5; font-size: 12px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;" width="100%" valign="top" height="100%">
+                                                    <?php foreach($query_data as $query => $value):?>
+                                                    <p style="font-size: 17px; line-height: 1.5; text-align: left;">
+                                                        <?php echo $query .'::'. $value;?>
+                                                    </p>
+                                                    <?php endforeach;?>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

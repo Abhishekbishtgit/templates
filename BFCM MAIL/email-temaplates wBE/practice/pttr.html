@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <canvas id="#myChart" widh="450" height="450"></canvas>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3],
+                    backgroundColor: [
+                        '#f2672e',
+                        '#30aadd',
+                        'red',
+
+                    ],
+
+                    borderWidth: 0
+                }]
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!-- accordiomns -->
+<div class="Polaris-Card">
+    <div class="Polaris-Card__Section ">
+        <div class="panel-group Custom-polaris-accrdion Custom-nested-accordion" id="accordion-parent">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title Polaris-TextStyle--variationStrong">
+                        <a data-toggle="collapse" data-parent="#accordion-parent" href="#collapse1" class="" aria-expanded="true">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Attribute mapping</font>
+                            </font>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in" aria-expanded="true" style="">
+                    <div class="panel-body">
+                        <div class="panel-group Custom-polaris-accrdion" data-id="faq-search-content" id="accordion_general">
+                            <div class="panel panel-default" id="311">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion_general" href="#div_311" class="fs-20 font-bold collapsed" aria-expanded="false">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Required attributes
+                                                </font>
+                                            </font>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="div_311" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                    <div class="">
+
+
+                                        <div class="Polaris-Card">
+                                            <div class="Polaris-Card__Header">
+                                                <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
+                                                    <div class="Polaris-Stack__Item Polaris-Stack__Item--fill">
+                                                        <h2 class="Polaris-Heading">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">Required attributes</font>
+                                                            </font>
+                                                        </h2>
+                                                        <div class="Polaris-Labelled__HelpText">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">This section is required to describe what type of items you want to sell on Bestbuyca.</font>
+                                                            </font>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="Polaris-Card__Section">
+                                                <div class="Polaris-TextContainer">
+                                                    <div class="Polaris-Card">
+                                                        <div class="Polaris-Card__Section p-0">
+                                                            <div class="table-responsive ">
+                                                                <table class="table table-hover layout-fixed alignment-left">
+                                                                    <colgroup>
+                                                                        <col style="width: 157px;">
+
+
+                                                                        <col style="width: 157px;">
+                                                                        <col style="width: 157px;">
+                                                                    </colgroup>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <font style="vertical-align: inherit;">
+                                                                                        <font style="vertical-align: inherit;">Blanket Type</font>
+                                                                                    </font>
+                                                                                </p>
+                                                                            </td>
+                                                                            <td>
+
+
+
+                                                                            </td>
+                                                                            <td class="1">
+                                                                                <div class="Polaris-FormLayout">
+
+                                                                                    <div class="Polaris-FormLayout__Item ">
+                                                                                        <div class="Polaris-Select custom-polaris-select _BlanketType_12223334_CAT_11967847_EN-container">
+                                                                                            <select name="category_management[required_attr][_BlanketType_12223334_CAT_11967847_EN]" class=" Polaris-Select__Input required_attr" ,="" id="_BlanketType_12223334_CAT_11967847_EN">
+                                                                                                                                <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Please select</font></font></option>
+                                                                                                                                   <option value="Quilted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Quilted                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Down Filled"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Down filled                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Woven"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        woven                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Knitted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Knitted                                                                                </font></font></option>
+                                                    
+                                                                                                                </select>
+                                                                                            <div class="help-block"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" id="312">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion_product" href="#div_312" class="fs-20 font-bold collapsed" aria-expanded="false">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Required attributes</font>
+                                            </font>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="div_312" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                    <div class="">
+                                        <div class="Polaris-Card">
+                                            <div class="Polaris-Card__Header">
+                                                <div class="Polaris-Stack Polaris-Stack--alignmentBaseline">
+                                                    <div class="Polaris-Stack__Item Polaris-Stack__Item--fill">
+                                                        <h2 class="Polaris-Heading">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;">
+                                                                        <font style="vertical-align: inherit;">Required attributes</font>
+                                                                    </font>
+                                                                </font>
+                                                            </font>
+                                                        </h2>
+                                                        <div class="Polaris-Labelled__HelpText">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;">
+                                                                        <font style="vertical-align: inherit;">This section is required to describe what type of items you want to sell on Bestbuyca.</font>
+                                                                    </font>
+                                                                </font>
+                                                            </font>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="Polaris-Card__Section">
+                                                <div class="Polaris-TextContainer">
+                                                    <div class="Polaris-Card">
+                                                        <div class="Polaris-Card__Section p-0">
+                                                            <div class="table-responsive ">
+                                                                <table class="table table-hover layout-fixed alignment-left">
+                                                                    <colgroup>
+                                                                        <col style="width: 157px;">
+
+
+                                                                        <col style="width: 157px;">
+                                                                        <col style="width: 157px;">
+                                                                    </colgroup>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <font style="vertical-align: inherit;">
+                                                                                        <font style="vertical-align: inherit;">
+                                                                                            <font style="vertical-align: inherit;">
+                                                                                                <font style="vertical-align: inherit;">Blanket Type</font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </p>
+                                                                            </td>
+                                                                            <td>
+
+
+
+                                                                            </td>
+                                                                            <td class="1">
+                                                                                <div class="Polaris-FormLayout">
+
+                                                                                    <div class="Polaris-FormLayout__Item ">
+                                                                                        <div class="Polaris-Select custom-polaris-select _BlanketType_12223334_CAT_11967847_EN-container">
+                                                                                            <select name="category_management[required_attr][_BlanketType_12223334_CAT_11967847_EN]" class=" Polaris-Select__Input required_attr" ,="" id="_BlanketType_12223334_CAT_11967847_EN">
+                                                                                                                                <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Please select</font></font></option>
+                                                                                                                                   <option value="Quilted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Quilted                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Down Filled"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Down filled                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Woven"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        woven                                                                                </font></font></option>
+                                                    
+                                                                                                                            <option value="Knitted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                        Knitted                                                                                </font></font></option>
+                                                    
+                                                                                                                </select>
+                                                                                            <div class="help-block"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dssdasds -->
+
+<div class="container">
+
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>PRODUCT ID</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>DESCRIPTION</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>This is a demonstration store. You can purchase products like this from Pure Fix CyclesThis tool is specifically designed with the fixed-gear rider in mind. It is made from heat-treated steel and has a lifetime warranty! This is the perfect
+                tool to keep your fixie riding right and has the following features:</p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>IMAGES</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>
+                <img class="image_hover" src="https://cdn.shopify.com/s/files/1/0548/6624/7754/products/il_fullxfull.3317988629_ttle.jpg?v=1633502267" width="40px" height="40px" alt="">
+                <label class="word-break"> Tool - Pedros Trixie</label>
+            </p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>TAGS</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>
+                UPDATED AT</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>
+                UPDATED AT</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+    <div class="row card-section-bg">
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:yellow;">
+            <p>
+                UPDATED AT</p>
+        </div>
+        <div class=" col-lg- 6 col-sm-6 col-md-6 col-xs-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- css style for neweggus  with file name-->
+
+/*---------- tempates ----------*/
+
+<style>
+    .tab-border>li.active a {
+        color: #333;
+        border-bottom: 4px solid #cf5a12 !important;
+    }
+    
+    .tab-border>li a {
+        color: #333;
+    }
+    
+    .tab-border>li a:hover {
+        color: #333 !important;
+    }
+    
+    .contact-heading {
+        font-weight: 600 !important;
+    }
+    
+    .create-tab {
+        display: block !important;
+    }
+    
+    .p-0 {
+        padding: 0px ! important;
+    }
+    
+    .mt-0 {
+        margin-top: 0px !important;
+    }
+    
+    .ml-5 {
+        margin-left: 5px ! important;
+    }
+    
+    .pb-5 {
+        padding-bottom: 5px !important;
+    }
+    
+    .pb-6 {
+        padding-bottom: 6px !important;
+    }
+    
+    .pb-10 {
+        padding-bottom: 10px !important;
+    }
+    
+    .pb-15 {
+        padding-bottom: 15px !important;
+    }
+    
+    .pt-5 {
+        padding-top: 5px !important;
+    }
+    
+    .pt-6 {
+        padding-top: 6px !important;
+    }
+    
+    .pt-10 {
+        padding-top: 10px !important;
+    }
+    
+    .pt-15 {
+        padding-top: 15px !important;
+    }
+    
+    .ws-nowrap {
+        white-space: nowrap !important;
+    }
+    
+    .d-flex {
+        display: flex;
+    }
+    
+    .overflow-xy {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+</style>
+
+/*---------- profling ----------*/ 1-index file
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .mt-20 {
+        margin-top: 20px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    input:checked+.slider {
+        background-color: #cc4e00;
+        ;
+    }
+    
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+</style>
+
+<!-- index file end -->
+
+<!--2. category section start -->
+<style type="text/css">
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .mt-20 {
+        margin-top: 20px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    input:checked+.slider {
+        background-color: #cc4e00;
+        ;
+    }
+    
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    
+    .mt-15 {
+        margin-top: 15px !important;
+    }
+    
+    .subCategory-container>label {
+        font-weight: 100;
+    }
+</style>
+
+<!-- category section end -->
+<!-- product rule style start -->
+<style>
+    .mb-17 {
+        margin-bottom: 17px !important;
+    }
+    
+    .mb-0 {
+        margin-bottom: 0px ! important;
+    }
+</style>
+<!-- product end -->
+
+<!-- price start  -->
+<style>
+    .mt-15 {
+        margin-top: 15px !important;
+    }
+    
+    .mt-3 {
+        margin-top: 3px !important;
+    }
+    
+    .fs-13 {
+        font-size: 13px !important;
+    }
+    
+    .fw-100 {
+        font-weight: 100 !important;
+    }
+    
+    .mb-17 {
+        margin-bottom: 17px !important;
+    }
+</style>
+
+<!-- price end -->
+
+<!-- attribute mapping new start -->
+<style>
+    .card-section-bg {
+        border: 1px solid #ffffff !important;
+        padding: 12px !important;
+        box-shadow: 1px 1px 5px #cccccc !important;
+    }
+    
+    .mb-25 {
+        margin-bottom: 25px !important;
+    }
+</style>
+<!-- attribute mapping end -->
+
+<!-- add profile start -->
+<style>
+    .flex-end {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 11px
+    }
+    
+    .custom-required {
+        padding-right: 15px;
+        position: relative;
+        display: inline-block
+    }
+    
+    .custom-required::after {
+        content: "*";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        color: red;
+        right: 4px;
+        font-size: 12px
+    }
+    
+    .attribute-map-index .grid-view .alert .fa {
+        background: unset !important;
+        border: unset !important;
+        color: #cc4e00 !important;
+        padding: 4px !important;
+    }
+    
+    .ml-12 {
+        margin-left: 12px ! important;
+    }
+    
+    .mt-17 {
+        margin-top: 17px ! important;
+    }
+    
+    .mt-10 {
+        margin-top: 10px ! important;
+    }
+    
+    .mt-22 {
+        margin-top: 22px !important;
+    }
+    
+    .mt-0 {
+        margin-top: 0px !important;
+    }
+    
+    .mt-5 {
+        margin-top: 5px !important;
+    }
+    
+    .mb-17 {
+        margin-bottom: 17px !important;
+    }
+    
+    .justify-content-center {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .justify-content-space-between {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .fs-15 {
+        font-size: 15px !important;
+    }
+    
+    .fs-18 {
+        font-size: 18px ! important;
+    }
+    
+    .fw-600 {
+        font-weight: 600 !important;
+    }
+    
+    .mr-8 {
+        margin-right: 8px ! important;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .profile-add {
+            min-height: 2200px !important;
+        }
+    }
+    
+    @media only screen and (min-width: 769px) and (max-width: 1150px) {
+        .profile-add {
+            min-height: 1600px !important;
+        }
+    }
+</style>
+<!-- add profile end -->
+
+
+<!-- valuing mapping start -->
+<style>
+    .top-5 {
+        top: 5% !important;
+    }
+    
+    .fw-600 {
+        font-weight: 600 !important;
+    }
+    
+    .vertical-middle {
+        vertical-align: middle !important;
+    }
+    
+    .mb-10 {
+        margin-bottom: 10px !important;
+    }
+    
+    .border-left-2 {
+        border-left: 2px solid #dddddd !important;
+    }
+    
+    .border-right-2 {
+        border-right: 2px solid #dddddd !important;
+    }
+</style>
+<!-- value mapping end -->
+
+/*---------- product view ----------*/
+<!-- view start -->
+<style>
+    .card-section-bg {
+        border: 1px solid #ffffff !important;
+        padding: 12px !important;
+        box-shadow: 1px 1px 5px #cccccc !important;
+    }
+    
+    .mb-25 {
+        margin-bottom: 25px !important;
+    }
+    
+    .mt-0 {
+        margin-top: 0px !important;
+    }
+    
+    .mt-5 {
+        margin-top: 5px !important;
+    }
+    
+    .p-0 {
+        padding: 0px !important;
+    }
+</style>
+<!-- view end -->
+<!-- shopify start -->
+<style>
+    .fs-25 {
+        font-size: 25px !important;
+    }
+    
+    .fw-600 {
+        font-weight: 600 ! important;
+    }
+    
+    .mt-20 {
+        margin-top: 20px !important;
+    }
+    
+    .ml-10 {
+        margin-left: 10px !important;
+    }
+    
+    .fs-15 {
+        font-size: 15px !important;
+    }
+    
+    .pr-0 {
+        padding-right: 0px !important;
+    }
+    
+    .ml-15 {
+        margin-left: 15px ! important;
+    }
+    
+    .ml-30 {
+        margin-left: 30px !important;
+    }
+    
+    .mt-15 {
+        margin-top: 15px ! important;
+    }
+    
+    .tab-border>li.active a {
+        color: #333;
+        border-bottom: 4px solid #cf5a12 !important;
+    }
+    
+    .tab-border>li a {
+        color: #333;
+    }
+    
+    .tab-border>li a:hover {
+        color: #333 !important;
+    }
+    
+    .mb-15 {
+        margin-bottom: 15px !important
+    }
+    
+    .p-0 {
+        padding: 0px !important;
+    }
+    
+    .br-unset {
+        border: unset !important;
+    }
+    
+    .card-section-bg {
+        border: 1px solid #ffffff !important;
+        padding: 12px !important;
+        box-shadow: 1px 1px 5px #cccccc !important;
+    }
+    
+    .mb-25 {
+        margin-bottom: 25px !important;
+    }
+    
+    .mt-0 {
+        margin-top: 0px !important;
+    }
+    
+    .mt-5 {
+        margin-top: 5px !important;
+    }
+    
+    .p-0 {
+        padding: 0px !important;
+    }
+</style>
+
+
+<div class="video-wrapper">
+    <a href="javascript:void(0)" onclick="showVideo(this.id,this.title)" id="/integration/static/modules/walmart/assets/images/gif/PRODUCT_IMPORT.gif" title="How to import products on our app?">
+        <div class="position-relative help-video">
+            <img id="play_0" class="img-responsive play" src="/integration/static/modules/walmart/assets/images/product_import.jpg" alt="walmart api" title="How to import products on our app?">
+            <span class="position-absolute c-pointer zoom-icon" id="/integration/static/modules/walmart/assets/images/gif/PRODUCT_IMPORT.gif" onclick="showVideo(this.id,this.title)">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 10a.997.997 0 01-.485.857l-10 6a1.004 1.004 0 01-1.008.013A1.001 1.001 0 014 16V4a1.001 1.001 0 011.515-.857l10 6c.301.18.485.505.485.857z" fill="white"></path>
+                </svg>
+            </span>
+        </div>
+    </a>
+    <span class="video-heading">How to import products on our app?</span>
+
+</div>
+<div class="video-wrapper">
+    <a href="javascript:void(0)" onclick="showVideo(this.id,this.title)" id="https://dev.apps.cedcommerce.com/marketplace-integration/static/modules/realde/assets/images/gif/get_api_de.gif" title="API-Schlüssel erhalten">
+        <div class="position-relative help-video">
+            <img id="play_0" class="img-responsive play" src="https://dev.apps.cedcommerce.com/marketplace-integration/static/modules/realde/assets/images/get_api_de.png" alt="Kaufland.de API" title="API-Schlüssel erhalten">
+            <span class="position-absolute c-pointer zoom-icon" id="https://dev.apps.cedcommerce.com/marketplace-integration/static/modules/realde/assets/images/gif/get_api_de.gif" onclick="showVideo(this.id,this.title)">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 10a.997.997 0 01-.485.857l-10 6a1.004 1.004 0 01-1.008.013A1.001 1.001 0 014 16V4a1.001 1.001 0 011.515-.857l10 6c.301.18.485.505.485.857z" fill="white"></path>
+    </svg>
+</span>
+        </div>
+    </a>
+    <span class="video-heading">API-Schlüssel erhalten</span>
+</div>

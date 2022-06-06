@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task6</title>
+    <link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@6.2.1/dist/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@shopify/polaris@5.0.0/dist/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+
+<style>
+    .polaris-loader {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 9999999;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+    <div class="loader" id="loderMSG" style="display: none;">
+        <div class="polaris-loader">
+            <span class="Polaris-Spinner Polaris-Spinner--sizeLarge"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.542 1.487A21.507 21.507 0 00.5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 00-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 10-.9-2.863z"></path>
+              </svg></span><span role="status"><span class="Polaris-VisuallyHidden">Spinner example</span></span>
+            <span class="Polaris-TextStyle--variationSubdued mt-20">
+                <span class="loader-message">Loading...</span>
+            </span>
+        </div>
+    </div>
+    <section>
+        <div>
+            <div style="--p-background:rgba(246, 246, 247, 1); --p-background-hovered:rgba(241, 242, 243, 1); --p-background-pressed:rgba(237, 238, 239, 1); --p-background-selected:rgba(237, 238, 239, 1); --p-surface:rgba(255, 255, 255, 1); --p-surface-neutral:rgba(228, 229, 231, 1); --p-surface-neutral-hovered:rgba(219, 221, 223, 1); --p-surface-neutral-pressed:rgba(201, 204, 208, 1); --p-surface-neutral-disabled:rgba(241, 242, 243, 1); --p-surface-neutral-subdued:rgba(246, 246, 247, 1); --p-surface-subdued:rgba(250, 251, 251, 1); --p-surface-disabled:rgba(250, 251, 251, 1); --p-surface-hovered:rgba(246, 246, 247, 1); --p-surface-pressed:rgba(241, 242, 243, 1); --p-surface-depressed:rgba(237, 238, 239, 1); --p-surface-search-field:rgba(241, 242, 243, 1); --p-backdrop:rgba(0, 0, 0, 0.5); --p-overlay:rgba(255, 255, 255, 0.5); --p-shadow-from-dim-light:rgba(0, 0, 0, 0.2); --p-shadow-from-ambient-light:rgba(23, 24, 24, 0.05); --p-shadow-from-direct-light:rgba(0, 0, 0, 0.15); --p-hint-from-direct-light:rgba(0, 0, 0, 0.15); --p-border:rgba(140, 145, 150, 1); --p-border-neutral-subdued:rgba(186, 191, 195, 1); --p-border-hovered:rgba(153, 158, 164, 1); --p-border-disabled:rgba(210, 213, 216, 1); --p-border-subdued:rgba(201, 204, 207, 1); --p-border-depressed:rgba(87, 89, 89, 1); --p-border-shadow:rgba(174, 180, 185, 1); --p-border-shadow-subdued:rgba(186, 191, 196, 1); --p-divider:rgba(225, 227, 229, 1); --p-icon:rgba(92, 95, 98, 1); --p-icon-hovered:rgba(26, 28, 29, 1); --p-icon-pressed:rgba(68, 71, 74, 1); --p-icon-disabled:rgba(186, 190, 195, 1); --p-icon-subdued:rgba(140, 145, 150, 1); --p-text:rgba(32, 34, 35, 1); --p-text-disabled:rgba(140, 145, 150, 1); --p-text-subdued:rgba(109, 113, 117, 1); --p-interactive:rgba(44, 110, 203, 1); --p-interactive-disabled:rgba(189, 193, 204, 1); --p-interactive-hovered:rgba(31, 81, 153, 1); --p-interactive-pressed:rgba(16, 50, 98, 1); --p-focused:rgba(69, 143, 255, 1); --p-surface-selected:rgba(242, 247, 254, 1); --p-surface-selected-hovered:rgba(237, 244, 254, 1); --p-surface-selected-pressed:rgba(229, 239, 253, 1); --p-icon-on-interactive:rgba(255, 255, 255, 1); --p-text-on-interactive:rgba(255, 255, 255, 1); --p-action-secondary:rgba(255, 255, 255, 1); --p-action-secondary-disabled:rgba(255, 255, 255, 1); --p-action-secondary-hovered:rgba(246, 246, 247, 1); --p-action-secondary-pressed:rgba(241, 242, 243, 1); --p-action-secondary-depressed:rgba(109, 113, 117, 1); --p-action-primary:rgba(0, 128, 96, 1); --p-action-primary-disabled:rgba(241, 241, 241, 1); --p-action-primary-hovered:rgba(0, 110, 82, 1); --p-action-primary-pressed:rgba(0, 94, 70, 1); --p-action-primary-depressed:rgba(0, 61, 44, 1); --p-icon-on-primary:rgba(255, 255, 255, 1); --p-text-on-primary:rgba(255, 255, 255, 1); --p-text-primary:rgba(0, 123, 92, 1); --p-text-primary-hovered:rgba(0, 108, 80, 1); --p-text-primary-pressed:rgba(0, 92, 68, 1); --p-surface-primary-selected:rgba(241, 248, 245, 1); --p-surface-primary-selected-hovered:rgba(179, 208, 195, 1); --p-surface-primary-selected-pressed:rgba(162, 188, 176, 1); --p-border-critical:rgba(253, 87, 73, 1); --p-border-critical-subdued:rgba(224, 179, 178, 1); --p-border-critical-disabled:rgba(255, 167, 163, 1); --p-icon-critical:rgba(215, 44, 13, 1); --p-surface-critical:rgba(254, 211, 209, 1); --p-surface-critical-subdued:rgba(255, 244, 244, 1); --p-surface-critical-subdued-hovered:rgba(255, 240, 240, 1); --p-surface-critical-subdued-pressed:rgba(255, 233, 232, 1); --p-surface-critical-subdued-depressed:rgba(254, 188, 185, 1); --p-text-critical:rgba(215, 44, 13, 1); --p-action-critical:rgba(216, 44, 13, 1); --p-action-critical-disabled:rgba(241, 241, 241, 1); --p-action-critical-hovered:rgba(188, 34, 0, 1); --p-action-critical-pressed:rgba(162, 27, 0, 1); --p-action-critical-depressed:rgba(108, 15, 0, 1); --p-icon-on-critical:rgba(255, 255, 255, 1); --p-text-on-critical:rgba(255, 255, 255, 1); --p-interactive-critical:rgba(216, 44, 13, 1); --p-interactive-critical-disabled:rgba(253, 147, 141, 1); --p-interactive-critical-hovered:rgba(205, 41, 12, 1); --p-interactive-critical-pressed:rgba(103, 15, 3, 1); --p-border-warning:rgba(185, 137, 0, 1); --p-border-warning-subdued:rgba(225, 184, 120, 1); --p-icon-warning:rgba(185, 137, 0, 1); --p-surface-warning:rgba(255, 215, 157, 1); --p-surface-warning-subdued:rgba(255, 245, 234, 1); --p-surface-warning-subdued-hovered:rgba(255, 242, 226, 1); --p-surface-warning-subdued-pressed:rgba(255, 235, 211, 1); --p-text-warning:rgba(145, 106, 0, 1); --p-border-highlight:rgba(68, 157, 167, 1); --p-border-highlight-subdued:rgba(152, 198, 205, 1); --p-icon-highlight:rgba(0, 160, 172, 1); --p-surface-highlight:rgba(164, 232, 242, 1); --p-surface-highlight-subdued:rgba(235, 249, 252, 1); --p-surface-highlight-subdued-hovered:rgba(228, 247, 250, 1); --p-surface-highlight-subdued-pressed:rgba(213, 243, 248, 1); --p-text-highlight:rgba(52, 124, 132, 1); --p-border-success:rgba(0, 164, 124, 1); --p-border-success-subdued:rgba(149, 201, 180, 1); --p-icon-success:rgba(0, 127, 95, 1); --p-surface-success:rgba(174, 233, 209, 1); --p-surface-success-subdued:rgba(241, 248, 245, 1); --p-surface-success-subdued-hovered:rgba(236, 246, 241, 1); --p-surface-success-subdued-pressed:rgba(226, 241, 234, 1); --p-text-success:rgba(0, 128, 96, 1); --p-decorative-one-icon:rgba(126, 87, 0, 1); --p-decorative-one-surface:rgba(255, 201, 107, 1); --p-decorative-one-text:rgba(61, 40, 0, 1); --p-decorative-two-icon:rgba(175, 41, 78, 1); --p-decorative-two-surface:rgba(255, 196, 176, 1); --p-decorative-two-text:rgba(73, 11, 28, 1); --p-decorative-three-icon:rgba(0, 109, 65, 1); --p-decorative-three-surface:rgba(146, 230, 181, 1); --p-decorative-three-text:rgba(0, 47, 25, 1); --p-decorative-four-icon:rgba(0, 106, 104, 1); --p-decorative-four-surface:rgba(145, 224, 214, 1); --p-decorative-four-text:rgba(0, 45, 45, 1); --p-decorative-five-icon:rgba(174, 43, 76, 1); --p-decorative-five-surface:rgba(253, 201, 208, 1); --p-decorative-five-text:rgba(79, 14, 31, 1); --p-border-radius-base:0.4rem; --p-border-radius-wide:0.8rem; --p-border-radius-full:50%; --p-card-shadow:0px 0px 5px var(--p-shadow-from-ambient-light), 0px 1px 2px var(--p-shadow-from-direct-light); --p-popover-shadow:-1px 0px 20px var(--p-shadow-from-ambient-light), 0px 1px 5px var(--p-shadow-from-direct-light); --p-modal-shadow:0px 26px 80px var(--p-shadow-from-dim-light), 0px 0px 1px var(--p-shadow-from-dim-light); --p-top-bar-shadow:0 2px 2px -1px var(--p-shadow-from-direct-light); --p-button-drop-shadow:0 1px 0 rgba(0, 0, 0, 0.05); --p-button-inner-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.2); --p-button-pressed-inner-shadow:inset 0 1px 0 rgba(0, 0, 0, 0.15); --p-override-none:none; --p-override-transparent:transparent; --p-override-one:1; --p-override-visible:visible; --p-override-zero:0; --p-override-loading-z-index:514; --p-button-font-weight:500; --p-non-null-content:&quot;&quot;; --p-choice-size:2rem; --p-icon-size:1rem; --p-choice-margin:0.1rem; --p-control-border-width:0.2rem; --p-banner-border-default:inset 0 0.1rem 0 0 var(--p-border-neutral-subdued), inset 0 0 0 0.1rem var(--p-border-neutral-subdued); --p-banner-border-success:inset 0 0.1rem 0 0 var(--p-border-success-subdued), inset 0 0 0 0.1rem var(--p-border-success-subdued); --p-banner-border-highlight:inset 0 0.1rem 0 0 var(--p-border-highlight-subdued), inset 0 0 0 0.1rem var(--p-border-highlight-subdued); --p-banner-border-warning:inset 0 0.1rem 0 0 var(--p-border-warning-subdued), inset 0 0 0 0.1rem var(--p-border-warning-subdued); --p-banner-border-critical:inset 0 0.1rem 0 0 var(--p-border-critical-subdued), inset 0 0 0 0.1rem var(--p-border-critical-subdued); --p-badge-mix-blend-mode:luminosity; --p-thin-border-subdued:0.1rem solid var(--p-border-subdued); --p-text-field-spinner-offset:0.2rem; --p-text-field-focus-ring-offset:-0.4rem; --p-text-field-focus-ring-border-radius:0.7rem; --p-button-group-item-spacing:-0.1rem; --p-duration-1-0-0:100ms; --p-duration-1-5-0:150ms; --p-ease-in:cubic-bezier(0.5, 0.1, 1, 1); --p-ease:cubic-bezier(0.4, 0.22, 0.28, 1); --p-range-slider-thumb-size-base:1.6rem; --p-range-slider-thumb-size-active:2.4rem; --p-range-slider-thumb-scale:1.5; --p-badge-font-weight:400; --p-frame-offset:0px;">
+                <div class="Polaris-Frame Polaris-Frame--hasTopBar top-heading-1" data-polaris-layer="true">
+                    <div class="Polaris-Frame__Skip"><a href="#AppFrameMain">Skip to content</a></div>
+                    <div class="Polaris-Frame__TopBar" data-polaris-layer="true" data-polaris-top-bar="true" id="AppFrameTopBar">
+                        <div class="Polaris-TopBar topmenu"><button type="button" class="Polaris-TopBar__NavigationIcon" aria-label="Toggle menu"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                    <path d="M19 11H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0-7H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0 14H1a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2z"></path>
+                </svg></span></button>
+                            <div class="bars-icon">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                            <div class="Polaris-TopBar__LogoContainer Polaris-TopBar__LogoDisplayControl">
+                                <a class="Polaris-TopBar__LogoLink" href="http://jadedpixel.com" data-polaris-unstyled="true" style="width: 124px;"><img src="/asset/images/ced.png" alt="Jaded Pixel" class="Polaris-TopBar__Logo" style="width: 124px;"></a>
+                                <div class="esty">
+                                    <h2>Etsy</h2>
+                                </div>
+                            </div>
+                            <div class="discuss">
+                                <h4><span class="note">Note:-</span> Discuss query related to etsy <span class="note">Schedule a meeting</span></h4>
+                            </div>
+
+                            <div class="Polaris-TopBar__Contents">
+
+                                <div class="Polaris-TopBar__SecondaryMenu">
+                                    <div>
+                                        <div class="Polaris-TopBar-Menu__ActivatorWrapper"><button type="button" class="Polaris-TopBar-Menu__Activator" tabindex="0" aria-controls="Polarispopover1" aria-owns="Polarispopover1" aria-expanded="false"><span><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M0 10C0 4.478 4.478 0 10 0c5.523 0 10 4.478 10 10 0 5.523-4.477 10-10 10-5.522 0-10-4.477-10-10zm11.125 2.002H8.989v-.141c.01-1.966.492-2.254 1.374-2.782.093-.056.19-.114.293-.178.73-.459 1.292-1.038 1.292-1.883 0-.948-.743-1.564-1.666-1.564-.851 0-1.657.398-1.712 1.533H6.304C6.364 4.693 8.18 3.5 10.294 3.5c2.306 0 3.894 1.447 3.894 3.488 0 1.382-.695 2.288-1.805 2.952l-.238.144c-.79.475-1.009.607-1.02 1.777V12zm.17 3.012a1.344 1.344 0 0 1-1.327 1.328 1.32 1.32 0 0 1-1.328-1.328 1.318 1.318 0 0 1 1.328-1.316c.712 0 1.322.592 1.328 1.316z"></path>
+                            </svg></span><span class="Polaris-VisuallyHidden">Secondary menu</span></span></button></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="Polaris-TopBar-Menu__ActivatorWrapper"><button type="button" class="Polaris-TopBar-Menu__Activator" tabindex="0" aria-controls="Polarispopover2" aria-owns="Polarispopover2" aria-expanded="false">
+                    <div class="Polaris-MessageIndicator__MessageIndicatorWrapper"><span aria-label="Avatar with initials D" role="img" class="Polaris-Avatar Polaris-Avatar--sizeSmall Polaris-Avatar--styleFour"><span class="Polaris-Avatar__Initials"><svg class="Polaris-Avatar__Svg" viewBox="0 0 40 40"><text x="50%" y="50%" dy="0.35em" fill="currentColor" font-size="20" text-anchor="middle">AB</text></svg></span></span></div><span class="Polaris-TopBar-UserMenu__Details">
+                        <div class="top-heading">  
+                            
+                            <p class="Polaris-TopBar-UserMenu__Name "><span class="welcome">WELCOME</span></p>
+                            <p class="Polaris-TopBar-UserMenu__Detail ">ABHISHEK BISHT</p>
+                        </div>
+                    
+                    </span>
+                    </button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Polaris-Frame__ContextualSaveBar Polaris-Frame-CSSAnimation--startFade"></div>
+                    <main class="Polaris-Frame__Main" id="AppFrameMain" data-has-global-ribbon="false">
+                        <div class="Polaris-Frame__Content top-subheading"></div>
+                    </main>
+                </div>
+                <div id="PolarisPortalsContainer">
+                    <div data-portal-id="popover-Polarisportal2"></div>
+                    <div data-portal-id="popover-Polarisportal3"></div>
+                    <div data-portal-id="Polarisportal1">
+                        <div class="Polaris-Frame-ToastManager" aria-live="assertive"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Polaris-Frame-ToastManager" aria-live="assertive"></div>
+    </section>
+
+    <section class="main-heading ">
+
+
+        <div class="Polaris-Stack__Item    navbar-heading ">
+            <nav class="Polaris-Navigation">
+                <div class="Polaris-Navigation__PrimaryNavigation Polaris-Scrollable Polaris-Scrollable--vertical" data-polaris-scrollable="true">
+                    <ul class="Polaris-Navigation__Section">
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M18 7.261V17.5c0 .841-.672 1.5-1.5 1.5h-2c-.828 0-1.5-.659-1.5-1.5V13H7v4.477C7 18.318 6.328 19 5.5 19h-2c-.828 0-1.5-.682-1.5-1.523V7.261a1.5 1.5 0 0 1 .615-1.21l6.59-4.82a1.481 1.481 0 0 1 1.59 0l6.59 4.82A1.5 1.5 0 0 1 18 7.26z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Home</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M11 1a1 1 0 1 0-2 0v7.586L7.707 7.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 8.586V1z"></path>
+                        <path d="M3 14V3h4V1H2.5A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1H13v2h4v11h-3.5c-.775 0-1.388.662-1.926 1.244l-.11.12A1.994 1.994 0 0 1 10 16a1.994 1.994 0 0 1-1.463-.637l-.111-.12C7.888 14.664 7.275 14 6.5 14H3z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Orders</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Products</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Profiling</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Templates</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                    </svg>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Error information</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Help</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                        <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                    </svg></span></div><span class="Polaris-Navigation__Text">SettingsS</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                        <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                        <path d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Payments</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Contact Us</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem">
+                            <div class="Polaris-Navigation__ItemWrapper">
+                                <a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+                                    <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                    </svg></span></div><span class="Polaris-Navigation__Text">Reconnect with esty</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="Polaris-Navigation__Section Polaris-Navigation__Section--withSeparator">
+                        <li class="Polaris-Navigation__SectionHeading "><span class="Polaris-Navigation__Text ">Services</span>
+                            <div><span class="Polaris-Badge Polaris-Badge--statusInfo "><span class="Polaris-VisuallyHidden ">Info </span>New</span>
+                                <div id="PolarisPortalsContainer "></div>
+                            </div>
+                        </li>
+                        <li class="Polaris-Navigation__ListItem ">
+                            <div class="Polaris-Navigation__ItemWrapper ">
+                                <a class="Polaris-Navigation__Item " tabindex="0 " href="/path/to/place " data-polaris-unstyled="true ">
+                                    <div class="Polaris-Navigation__Icon "><span class="Polaris-Icon "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                                    <path d="M1.791 2.253l-.597 3.583A1 1 0 0 0 2.18 7h.893a1.5 1.5 0 0 0 1.342-.83L5 5l.585 1.17A1.5 1.5 0 0 0 6.927 7h1.146a1.5 1.5 0 0 0 1.342-.83L10 5l.585 1.17a1.5 1.5 0 0 0 1.342.83h1.146a1.5 1.5 0 0 0 1.342-.83L15
+                        5l.585 1.17a1.5 1.5 0 0 0 1.342.83h.893a1 1 0 0 0 .986-1.164l-.597-3.583A1.5 1.5 0 0 0 16.729 1H3.271a1.5 1.5 0 0 0-1.48 1.253zM4 18.5A1.5 1.5 0 0 1 5.5 17H8v-3h4v3h2.5a1.5 1.5 0 0 1 1.5 1.5v.5H4v-.5z "></path>
+                                    <path d="M2 9h2v4h12V9h2v4.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 13.5V9z "></path>
+                                  </svg></span></div><span class="Polaris-Navigation__Text ">Online Store</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="PolarisPortalsContainer "></div>
+        </div>
+
+
+
+        <!-- *******************************************welcome****************************************************************-->
+
+        <div class="Polaris-Stack__Item welcome-section">
+            <div class="welcome-subheading ">
+                <h2>Welcome, Abhishek Bisht</h2>
+            </div>
+            <div class="welcome-subheading-part-2 ">
+                <h3>Check out the recent progress in your store. Click <span class="welcome-here "> here</span> to refresh dashboard.<i><span class="last-refresh "> last refresh:April 28,2021,10:23AM BST </span> </i></h3>
+            </div>
+
+            <div>
+                <div class="Polaris-Banner Polaris-Banner--statusInfo Polaris-Banner--hasDismiss Polaris-Banner--withinPage rate-banner " tabindex="0 " role="status " aria-live="polite " aria-labelledby="PolarisBanner46Heading " aria-describedby="PolarisBanner46Content ">
+                    <div class="Polaris-Banner__Dismiss "><button class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly " aria-label="Dismiss notification " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Icon
+                        "><span class="Polaris-Icon "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                              <path d="M11.414 10l4.293-4.293a.999.999 0 1 0-1.414-1.414L10 8.586 5.707 4.293a.999.999 0 1 0-1.414 1.414L8.586 10l-4.293 4.293a.999.999 0 1 0 1.414 1.414L10 11.414l4.293 4.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L11.414
+                        10z "></path>
+                            </svg></span></span></span></button></div>
+                    <div class="Polaris-Banner__Ribbon "><span class="Polaris-Icon Polaris-Icon--colorHighlight Polaris-Icon--applyColor "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                        <path fill-rule="evenodd " d="M10 20c5.514 0 10-4.486 10-10S15.514 0 10 0 0 4.486 0 10s4.486 10 10 10zm1-6a1 1 0 1 1-2 0v-4a1 1 0 1 1 2 0v4zm-1-9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z "></path>
+                      </svg></span></div>
+                    <div class="Polaris-Banner__ContentWrapper ">
+                        <div class="Polaris-Banner__Heading " id="PolarisBanner46Heading ">
+
+                        </div>
+                        <div class="Polaris-Banner__Content " id="PolarisBanner46Content ">
+                            <div class="rate-star ">
+
+                                <h2 class="rate-heading ">Rate the performance od app and our services !</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star " viewBox="0 0 16 16 ">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523
+                        3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503
+                        0 0 0-.461 0z "/>
+                                  </svg>
+
+
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star " viewBox="0 0 16 16 ">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523
+                        3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503
+                        0 0 0-.461 0z "/>
+                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star " viewBox="0 0 16 16 ">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523
+                        3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503
+                        0 0 0-.461 0z "/>
+                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star " viewBox="0 0 16 16 ">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523
+                        3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503
+                        0 0 0-.461 0z "/>
+                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star " viewBox="0 0 16 16 ">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523
+                        3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503
+                        0 0 0-.461 0z "/>
+                                  </svg>
+                            </div>
+
+                            <div class="Polaris-Banner__Actions ">
+                                <div class="Polaris-ButtonGroup ">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="PolarisPortalsContainer "></div>
+                </div>
+
+            </div>
+            <!--************************************************************** complete section start ************************************888 -->
+            <div class="complete-card ">
+                <div class="Polaris-Card ">
+                    <div class="Polaris-Card__Header ">
+                        <div class="Polaris-Stack Polaris-Stack--alignmentBaseline ">
+                            <div class="Polaris-Stack__Item Polaris-Stack__Item--fill ">
+                                <h2 class="Polaris-Heading ">Complete all steps to start your sales on Etsy.</h2>
+                            </div>
+                            <div class="Polaris-Stack__Item ">
+                                <div class="Polaris-ButtonGroup ">
+                                    <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-TextStyle--variationSubdued ">Completed 3/4</span></span></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Polaris-Card__Section ">
+                        <div class="Polaris-complete ">
+                            <div class=" polaris-complete-1 ">
+                                <div class="Polaris-Card ">
+                                    <div>
+                                        <nav class="Polaris-Navigation ">
+                                            <div class="Polaris-Navigation__PrimaryNavigation Polaris-Scrollable Polaris-Scrollable--vertical " data-polaris-scrollable="true ">
+                                                <ul class="Polaris-Navigation__Section ">
+                                                    <li class="Polaris-Navigation__ListItem ">
+                                                        <div class="Polaris-Navigation__ItemWrapper ">
+                                                            <a class="Polaris-Navigation__Item Polaris-Navigation__Item--selected Polaris-Navigation--subNavigationActive " tabindex="0 " href="/ " data-polaris-unstyled="true ">
+                                                                <div class="Polaris-Navigation__Icon "><span class="Polaris-Icon "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z "/>
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z "/>
+                    </svg></span></div><span class="Polaris-Navigation__Text ">Add Product</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="Polaris-Navigation__Section Polaris-Navigation__Section--withSeparator ">
+                                                    <li class="Polaris-Navigation__ListItem ">
+                                                        <div class="Polaris-Navigation__ItemWrapper ">
+                                                            <a class="Polaris-Navigation__Item " tabindex="0 " href="/path/to/place " data-polaris-unstyled="true ">
+                                                                <div class="Polaris-Navigation__Icon "><span class="Polaris-Icon "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z "/>
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z "/>
+                    </svg></span></div><span class="Polaris-Navigation__Text ">Profiling</span>
+
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="Polaris-Navigation__Section Polaris-Navigation__Section--withSeparator ">
+                                                    <li class="Polaris-Navigation__ListItem ">
+                                                        <div class="Polaris-Navigation__ItemWrapper ">
+                                                            <a class="Polaris-Navigation__Item Polaris-Navigation--subNavigationActive " tabindex="0 " aria-expanded="true " aria-controls="PolarisSecondaryNavigation25 " href="/admin/products
+                        " data-polaris-unstyled="true ">
+                                                                <div class="Polaris-Navigation__Icon "><span class="Polaris-Icon "><svg viewBox="0 0 20 20 " class="Polaris-Icon__Svg " focusable="false " aria-hidden="true ">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z "/>
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z "/>
+                    </svg></span></div><span class="Polaris-Navigation__Text ">Link etsy product</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" polaris-complete-2 ">
+                                <div class="Polaris-Card ">
+                                    <div class="Polaris-Card__Header ">
+                                        <div class="Polaris-Stack ">
+                                            <div class="Polaris-Stack__Item ">
+                                                <h6 class="Polaris-Heading ">Import products from Shopify to the app</h6>
+                                            </div>
+                                            <div class="Polaris-Stack__Item ">
+                                                <div><span class="Polaris-Badge Polaris-Badge--statusSuccess "><span class="Polaris-VisuallyHidden ">Success </span>Completed</span>
+                                                    <div id="PolarisPortalsContainer "></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Polaris-Card__Header ">
+                                        <p>To bring the products from Shopify to the app, click on the button below.</p>
+                                    </div>
+                                    <div class="Polaris-Card__Header ">
+                                        <div class="Polaris-Stack Polaris-Stack--distributionLeading Polaris-Stack--alignmentCenter ">
+                                            <div class="Polaris-Stack__Item ">
+                                                <div class="Polaris-ButtonGroup ">
+                                                    <div class="Polaris-ButtonGroup__Item "><button class="Polaris-Button Polaris-Button--primary " id="loder" type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">Start Import</span></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="Polaris-Stack__Item ">
+                                                <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">Watch Tutorial </span></span></button></div>
+                                            </div>
+                                            <div class="Polaris-Stack__Item ">
+                                                <div class="play-btn ">
+                                                    <button class='button play'></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Polaris-Card__Header ">
+                                        <div class="Polaris-Stack Polaris-Stack--distributionCenter Polaris-Stack--alignmentCenter ">
+                                            <div class="Polaris-Stack__Item ">
+                                                <div class="learnmore_div ">
+                                                    <div class="Polaris-Stack Polaris-Stack--distributionCenter Polaris-Stack--alignmentCenter ">
+                                                        <div class="Polaris-Stack__Item "><svg xmlns=" http://www.w3.org/2000/svg " class="bi bi-question-circle-fill add-color-bg " viewBox="0 0 16 16 ">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25
+                        0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584
+                        0-1.009.388-1.009.94 0 .533.425.927 1.01.927z ">
+                    </path>
+                    </svg>
+                                                        </div>
+                                                        <div class="Polaris-Stack__Item add-product">
+                                                            <p><span>Learn more about </span><span class=" Polaris-Link ">Add Product</span>
+                                                            </p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+            <div>
+                <div class="Polaris-Card complete-card ">
+                    <div class="Polaris-CalloutCard__Container ">
+                        <div class="Polaris-Card__Section ">
+                            <div class="Polaris-CalloutCard ">
+                                <div class="Polaris-CalloutCard__Content ">
+                                    <div class="Polaris-CalloutCard__Title ">
+                                        <h2 class="Polaris-Heading ">Customize the style of your checkout</h2>
+                                    </div>
+                                    <div class="Polaris-TextContainer ">
+                                        <p>Upload your store’s logo, change colors and fonts, and more.</p>
+                                    </div>
+                                    <div class="Polaris-CalloutCard__Buttons ">
+                                        <div class="Polaris-ButtonGroup ">
+                                            <div class="Polaris-ButtonGroup__Item "><button class="Polaris-Button " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">Customize checkout</span></span></button></div>
+                                            <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text "> Checkout out the process</span></span></button></div>
+                                        </div>
+                                    </div>
+                                </div><img src="https://cdn.shopify.com/s/assets/admin/checkout/settings-customizecart-705f57c725ac05be5a34ec20c05b94298cb8afd10aac7bd9c7ad02030f48cfa0.svg " alt=" " class="Polaris-CalloutCard__Image ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+
+
+            <!-- ***************************************3section***************************************** -->
+            <div>
+                <div class="Polaris-Card complete-card ">
+                    <div>
+                        <div class="Polaris-Card__Header ">
+                            <h2 class="Polaris-Heading ">FAQ's</h2>
+
+                        </div>
+                        <div class="Polaris-Card__Section ">
+                            <div class="section-question ">
+                                <div style="padding-right: 12px; ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-question-circle " viewBox="0 0 16 16 ">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z "/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0
+                        0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z "/>
+          </svg>
+                                </div>
+                                <div class="john ">
+                                    <p>Is there duringthe during 7 days free trail</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Polaris-Card__Section ">
+                            <div class="section-question ">
+                                <div style="padding-right: 12px; ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-question-circle " viewBox="0 0 16 16 ">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z "/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0
+                        0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z "/>
+          </svg>
+                                </div>
+                                <div class="john ">
+                                    <p>I have products already listed on esty.!! how can we view them And Update their status in app</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Polaris-Card__Section ">
+                            <div class="section-question ">
+                                <div style="padding-right: 12px; ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-question-circle " viewBox="0 0 16 16 ">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z "/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0
+                        0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z "/>
+          </svg>
+                                </div>
+                                <div class="john ">
+                                    <p>Is there duringthe during 7 days free trail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="PolarisPortalsContainer "></div>
+                </div>
+                <div>
+                    <div class="Polaris-Card complete-card ">
+                        <div>
+                            <div class="Polaris-Card__Header ">
+                                <h2 class="Polaris-Heading ">Trending App</h2>
+
+                            </div>
+
+
+                            <div class="Polaris-Card__Section ">
+                                <div class="section-question ">
+                                    <div style="padding-right: 12px; ">
+                                        <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-facebook " viewBox="0 0 16 16 ">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993
+                        0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z "/>
+                                          </svg>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <p>Facebook Marketplace connector</p>
+                                        </div>
+                                        <div class="facebook ">
+                                            <div>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                            </div>
+
+                                            <div class="facebook-para ">
+                                                <p>On App Store</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Polaris-Card__Section ">
+                                <div class="section-question ">
+                                    <div style="padding-right: 12px; ">
+                                        <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-bezier " viewBox="0 0 16 16 ">
+                                            <path fill-rule="evenodd " d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5
+                        1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5
+                        1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z "/>
+                                            <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1
+                        0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z "/>
+                                          </svg>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <p>Walmart Marketplace connector</p>
+                                        </div>
+                                        <div class="facebook ">
+                                            <div>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                                <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                            </div>
+
+                                            <div class="facebook-para ">
+                                                <p>On App Store</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Polaris-Card__Section ">
+                            <div class="section-question ">
+                                <div style="padding-right: 12px; ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-bezier " viewBox="0 0 16 16 ">
+                                        <path fill-rule="evenodd " d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5
+                        1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5
+                        1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z "/>
+                                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517
+                        6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z "/>
+                                      </svg>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p>Bonoza Marketplace connector</p>
+                                    </div>
+                                    <div class="facebook ">
+                                        <div>
+                                            <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                            <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                            <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                            <span><i class="fa fa-star " aria-hidden="true "></i></span>
+                                        </div>
+
+                                        <div class="facebook-para ">
+                                            <p>On App Store</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="PolarisPortalsContainer "></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ******************************************************************right hand side******************888 -->
+
+
+        <div class="Polaris-Stack__Item product-pie  product-card">
+            <div>
+                <div class="Polaris-Card complete-card ">
+                    <div class="Polaris-Card__Header ">
+                        <div class="Polaris-Stack Polaris-Stack--alignmentBaseline ">
+                            <div class="Polaris-Stack__Item Polaris-Stack__Item--fill product-71 ">
+                                <h2 class="Polaris-Heading ">Products</h2>
+
+                                <h2 class="Polaris-Heading ">71</h2>
+                            </div>
+                            <div class="Polaris-Stack__Item ">
+                                <div class="Polaris-ButtonGroup ">
+                                    <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">View Records</span></span></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Polaris-Card__Section ">
+                        <img src="asset/images/pie.png " style="width: 105%; ">
+                    </div>
+                    <div class="Polaris-Card__Header ">
+                        <div class="Polaris-Stack Polaris-Stack--alignmentBaseline ">
+                            <div class="Polaris-Stack__Item Polaris-Stack__Item--fill ">
+
+                            </div>
+                            <div class="Polaris-Stack__Item ">
+                                <div class="Polaris-ButtonGroup ">
+                                    <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">View Reports</span></span></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+
+            <div>
+                <div class="Polaris-Card complete-card ">
+
+                    <div class="Polaris-Card__Section cards-section ">
+                        <div class="Polaris-Card__SectionHeader ">
+                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline ">
+                                <div class="Polaris-Stack__Item Polaris-Stack__Item--fill ">
+                                    <h3 aria-label="Contact Information " class="Polaris-Subheading ">Esty shop status</h3>
+                                </div>
+                                <div class="Polaris-Stack__Item ">
+                                    <div class="Polaris-ButtonGroup ">
+                                        <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">update</span></span></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="peace-heading ">
+                            <div>
+                                <p><span class="peace "> PeacefulSalmicArts</span></p>
+                            </div>
+
+                            <div><span class="Polaris-Badge Polaris-Badge--statusSuccess Polaris-Badge--progressComplete "><span class="Polaris-Badge__Pip "><span class="Polaris-VisuallyHidden ">Status: Published. Your online store is visible.</span></span>Live</span>
+                                <div id="PolarisPortalsContainer "></div>
+                            </div>
+                        </div>
+                        <hr class="hr-line ">
+
+                        <div>
+                            <div class="peace-heading-1 ">
+                                <div>
+                                    <p><span>Customizable order accepted</span></p>
+                                </div>
+
+                                <div><span class="Polaris-Badge Polaris-Badge--statusAttention "><span class="Polaris-VisuallyHidden ">Attention </span>No</span>
+                                    <div id="PolarisPortalsContainer "></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+
+            <!-- ********************************************************************account info******************************************** -->
+            <div>
+                <div class="Polaris-Card complete-card ">
+
+                    <div class="Polaris-Card__Section cards-section ">
+                        <div class="Polaris-Card__SectionHeader ">
+                            <div class="Polaris-Stack Polaris-Stack--alignmentBaseline ">
+                                <div class="Polaris-Stack__Item Polaris-Stack__Item--fill ">
+                                    <h3 aria-label="Contact Information " class="Polaris-Subheading ">Accounts info</h3>
+                                </div>
+                                <div class="Polaris-Stack__Item ">
+                                    <div class="Polaris-ButtonGroup ">
+                                        <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">Know More</span></span></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="peace-heading ">
+                            <div>
+                                <p><span> Plan Status</span></p>
+                            </div>
+
+                            <div><span class="Polaris-Badge Polaris-Badge--statusSuccess Polaris-Badge--progressComplete "><span class="Polaris-Badge__Pip "><span class="Polaris-VisuallyHidden ">Status: Published. Your online store is visible.</span></span>Paid</span>
+                                <div id="PolarisPortalsContainer "></div>
+                            </div>
+                        </div>
+                        <hr class="hr-line ">
+
+                        <div>
+                            <div class="peace-heading-1 ">
+                                <div>
+                                    <p><span>Remaining days</span></p>
+                                </div>
+
+                                <div>
+                                    <span>95</span>
+                                    <div id="PolarisPortalsContainer "></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr class="hr-line ">
+
+                        <div>
+                            <div class="peace-heading-1 ">
+                                <div>
+                                    <p><span>Products Limit</span></p>
+                                </div>
+
+                                <div>
+                                    <span class="last-refresh ">71/100 Available</span>
+                                    <div id="PolarisPortalsContainer "></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr class="hr-line ">
+
+                        <div>
+                            <div class="peace-heading-1 ">
+                                <div>
+                                    <p><span>Order Limits</span></p>
+                                </div>
+
+                                <div>
+                                    <span class="last-refresh ">0/100 available</span>
+                                    <div id="PolarisPortalsContainer "></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+            <!-- *******************************************************rtecent activities************************* -->
+
+            <div>
+                <div class="Polaris-Card complete-card ">
+                    <div class="Polaris-Card__Header ">
+                        <h2 class="Polaris-Heading ">Recent Activities</h2>
+                    </div>
+                    <div class="Polaris-Card__Section ">
+                        <div class="peace-heading-1 ">
+                            <div>
+                                <p>Order fetch.</p>
+                            </div>
+                            <div class="eyes ">
+                                <span class="last-refresh ">  0/100 available   </span>
+                                <div> <svg xmlns="http://www.w3.org/2000/svg " width="20 " height="20 " fill="currentColor " class="bi bi-eye " viewBox="0 0 16 16 ">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83
+                        1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z "/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z "/>
+                                      </svg>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+
+            <!-- *******************want to increase sales -->
+            <div>
+                <div class="Polaris-Card complete-card ">
+                    <div class="Polaris-CalloutCard__Container ">
+                        <div class="Polaris-Card__Section ">
+                            <div class="Polaris-CalloutCard ">
+                                <div class="Polaris-CalloutCard__Content ">
+                                    <div class="Polaris-CalloutCard__Title ">
+                                        <h2 class="Polaris-Heading ">Want to increase sales on</h2> <span class="Polaris-Heading ">esty?</span>
+                                    </div>
+                                    <div class="Polaris-TextContainer ">
+                                        <p>Upload your store’s logo, change colors and fonts, and more.</p>
+                                    </div>
+                                    <div class="Polaris-CalloutCard__Buttons ">
+                                        <div class="Polaris-ButtonGroup ">
+                                            <div class="Polaris-ButtonGroup__Item "><button class="Polaris-Button " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text ">Checkout Blogs</span></span></button></div>
+                                            <div class="Polaris-ButtonGroup__Item Polaris-ButtonGroup__Item--plain "><button class="Polaris-Button Polaris-Button--plain " type="button "><span class="Polaris-Button__Content "><span class="Polaris-Button__Text "></span></span></button></div>
+                                        </div>
+                                    </div>
+                                </div><img src="https://cdn.shopify.com/s/assets/admin/checkout/settings-customizecart-705f57c725ac05be5a34ec20c05b94298cb8afd10aac7bd9c7ad02030f48cfa0.svg " alt=" " class="Polaris-CalloutCard__Image ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+
+
+            <div class="Polaris-Card ">
+                <div class="Polaris-Card__Section complete-card ">
+                    <div class="section-question ">
+                        <div style="padding-right: 12px; ">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="46 " height="46 " fill="currentColor " class="bi bi-facebook " viewBox="0 0 16 16 ">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303
+                        1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z "/>
+                              </svg>
+                        </div>
+                        <div>
+                            <div class="Polaris-Heading announce ">
+                                <span>ANNOUCEMENTS</span>
+
+                            </div>
+                            <div>
+                                <p>Esty marketplace Integration is.......</p>
+                                <span class="last-refresh ">02/23/2021</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <section class="complete-card footer-section ">
+        <div class="footer-section ">
+            <div>
+                <div class="Polaris-Stack Polaris-Stack--distributionCenter Polaris-Stack--alignmentCenter ">
+                    <div class="Polaris-Stack__Item ">
+                        <p class="Polaris-Stack_footItemp ">Copyright 2021 CECOMMERCE | All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="Polaris-Stack Polaris-Stack--distributionCenter Polaris-Stack--alignmentCenter ">
+                    <div class="Polaris-Stack__Item ">
+                        <p class="Polaris-Stack_footItemp last-refresh ">*This is Etsy is a trademark of Etsy Corp..This application uses Etsy API but is not endorsed or certified by Etsy Inc.</p>
+                    </div>
+                </div>
+                <div id="PolarisPortalsContainer "></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $('#loder').on('click', function() {
+            $('#loderMSG').css("display", "block");
+            setTimeout(function() {
+                $('#loderMSG').css("display", "none");
+            }, 3000);
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
